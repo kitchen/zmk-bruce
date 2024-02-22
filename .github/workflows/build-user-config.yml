@@ -122,6 +122,11 @@ jobs:
         shell: sh -x {0}
         run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
+      - name: West Build (${{ env.display_name }}) ram_report
+        working-directory: ${{ env.base_dir }}
+        shell: sh -x {0}
+        run: west build -t ram_report
+
       - name: ${{ env.display_name }} Kconfig file
         run: |
           if [ -f "${{ env.build_dir }}/zephyr/.config" ]
