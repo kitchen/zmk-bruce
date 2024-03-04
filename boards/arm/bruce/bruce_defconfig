@@ -14,11 +14,6 @@ CONFIG_GPIO=y
 # Enable pinctrl
 CONFIG_PINCTRL=y
 
-# Poll to avoid interrupt overlap issues
-CONFIG_ZMK_KSCAN_MATRIX_POLLING=y
-CONFIG_ZMK_KSCAN_MATRIX_WAIT_BEFORE_INPUTS=10
-CONFIG_ZMK_KSCAN_MATRIX_WAIT_BETWEEN_OUTPUTS=10
-
 # Needed to reduce this to size that will fit on F072
 CONFIG_HEAP_MEM_POOL_SIZE=1024
 
